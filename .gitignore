@@ -15,7 +15,11 @@ Thumbs.db
 .idea/
 .vscode/
 
-# Dependency / build artifacts (in case tooling is added later)
+# Dependency / build artifacts
 node_modules/
 dist/
 build/
+
+# VitePress
+docs/.vitepress/dist/
+docs/.vitepress/cache/
