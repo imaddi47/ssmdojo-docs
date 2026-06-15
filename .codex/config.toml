@@ -1,0 +1,43 @@
+#:schema https://developers.openai.com/codex/config-schema.json
+
+# Codex project config for ssmdojo-docs (SSM Dojo documentation & release management).
+# Copy to ~/.codex/config.toml for global defaults, or keep here as project-local settings.
+# The canonical agent guide is AGENTS.md at the repo root — Codex reads it automatically.
+
+# Runtime defaults — conservative for a docs repo.
+approval_policy = "on-request"
+sandbox_mode    = "workspace-write"
+web_search      = "live"            # useful for verifying facts/links while writing docs
+
+# Default reasoning effort for routine doc authoring/editing (the "Standard" tier in
+# AGENTS.md → Model & effort routing). Override per-task with the profiles below.
+model_reasoning_effort = "medium"
+
+# Appended to every prompt (additive — does not replace AGENTS.md).
+persistent_instructions = "Follow AGENTS.md. Decide model effort by task type: low for mechanical edits (typos, links, lint, formatting), medium for standard authoring/editing, high for research, structure, or accuracy-critical release text. Never commit to main; never invent versions, dates, or features."
+
+# Effort profiles — switch with `codex -p <name>`.
+# These map onto AGENTS.md → Model & effort routing.
+
+[profiles.cheap]              # Mechanical tier: typos, link/anchor fixes, lint, formatting
+approval_policy        = "on-request"
+sandbox_mode           = "workspace-write"
+model_reasoning_effort = "low"
+
+[profiles.deep]               # Judgment tier: IA, restructure, accuracy audits, release verification
+approval_policy        = "on-request"
+sandbox_mode           = "workspace-write"
+web_search             = "live"
+model_reasoning_effort = "high"
+
+[profiles.strict]             # Read-only review pass — no writes
+approval_policy        = "on-request"
+sandbox_mode           = "read-only"
+web_search             = "cached"
+model_reasoning_effort = "medium"
+
+# MCP servers — kept minimal for a docs repo. Uncomment GitHub for release/PR context.
+# [mcp_servers.github]
+# command = "npx"
+# args = ["-y", "@modelcontextprotocol/server-github"]
+# startup_timeout_sec = 30

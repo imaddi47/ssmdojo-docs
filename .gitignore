@@ -1,0 +1,21 @@
+# Secrets — never commit
+.env
+.env.*
+*.key
+*.pem
+
+# Local, per-developer harness settings (commit the shared configs, not local overrides)
+.claude/settings.local.json
+.codex/config.local.toml
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# Dependency / build artifacts (in case tooling is added later)
+node_modules/
+dist/
+build/
