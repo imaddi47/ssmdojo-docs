@@ -19,7 +19,8 @@ export default defineConfig({
   ignoreDeadLinks: true,
 
   head: [
-    ['meta', { name: 'theme-color', content: '#7c5cff' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#080c0b' }],
     ['meta', { name: 'og:title', content: 'SSM Dojo Documentation' }],
     [
       'meta',
@@ -32,6 +33,8 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    logo: '/logo.svg',
+
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
       { text: 'Features', link: '/features/tunnels' },
