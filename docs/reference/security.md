@@ -1,63 +1,55 @@
-# Security model
+# Security & privacy
 
-SSM Dojo keeps all privilege in a local server and exposes nothing to the network. This page
-explains the boundaries so you can reason about what's safe.
+SSM Dojo is built to keep your access local and your secrets safe. This page explains what that
+means for you.
 
-## Loopback-only server
+## Everything runs locally
 
-The engine runs inside a Node server bound to `127.0.0.1` — never `0.0.0.0`. In the desktop app the
-port is OS-assigned (random per launch). Because the server only listens on the loopback interface,
-it isn't reachable from your network.
+SSM Dojo runs entirely on your computer. It isn't a hosted service and it doesn't phone home — the
+only network calls it makes are to **AWS**, using **your** credentials, to do the things you ask
+(list instances, start sessions, transfer files). Your credentials, connections, and files are
+never sent to any third party.
 
-## Per-launch token
+## Not exposed to your network
 
-On top of loopback binding, the desktop app gates the local server with a **fresh token generated
-every launch** (32 random bytes, hex-encoded):
+The app's internal engine listens only on your own machine (loopback) — it isn't reachable from
+your network or the internet. On top of that, the desktop app authorizes itself to that engine
+with a **fresh secret generated every time you launch**, so nothing else on your machine can drive
+it.
 
-- **Generation** — the Electron main process creates the token at startup and hands it to the
-  server.
-- **HTTP** — every request to `/api/*` and the static assets must carry
-  `Authorization: Bearer <token>`. The desktop app injects this header automatically (via Electron's
-  `onBeforeSendHeaders`) for requests to the app origin, and the token is compared **in constant
-  time** to avoid timing leaks.
-- **WebSockets** — browsers can't set headers on a WS handshake, so the token rides as a `?token=`
-  query parameter, validated the same way.
-- **How the UI gets it** — the token is passed to the renderer through the Electron preload bridge
-  (exposed as `window.ssm.apiToken`), not over HTTP, so a page can't fish it out of a network
-  response.
+## Your AWS credentials
 
-::: tip Web / dev mode
-When no token is configured (plain web mode, local dev, or E2E), the auth gate is open — there's no
-desktop keychain or Electron preload to anchor the token, and loopback binding is the boundary. Run
-untrusted contexts only where you'd be comfortable with that.
-:::
+SSM Dojo never stores your AWS credentials. It reads your existing profiles from `~/.aws` and uses
+them directly through the official AWS tooling. If credentials are expired or need an SSO login,
+the app tells you rather than failing silently.
 
-## Sandboxed renderer
+## SSH host verification
 
-In the desktop app the Electron renderer is sandboxed: no Node integration, no direct filesystem or
-IPC access to privileged APIs. It talks to the server only over HTTP/WebSocket, and external links
-open in your system browser rather than navigating the app window.
-
-## SSH host-key trust on first use
-
-For SSH and file transfers, the remote host key is recorded on first connect and pinned (per
-connection, in `known_hosts/<tunnelId>`). A changed key is rejected as a possible
-man-in-the-middle. File transfers use `StrictHostKeyChecking=accept-new` against that per-tunnel
-known-hosts file.
+For SSH and file transfers, SSM Dojo remembers a host's identity the first time you connect
+(trust-on-first-use) and checks it on every later connection. If a host's key changes unexpectedly
+— a possible man-in-the-middle — the connection is refused. If the change is legitimate (for
+example, the server was rebuilt), you can reset the stored key by editing the connection.
 
 ## Secrets handling
 
-- **RDP passwords** (optional) are encrypted with your OS keychain (`safeStorage`) and stored in
-  `secrets.json`. Plaintext never touches disk; a decryption failure never blocks a launch.
-- **SSH passphrases** and **sudo passwords** live in memory only and are cleared when a connection
-  stops, its config changes, the tunnel is deleted, or the app restarts.
-- **AWS credentials** are never stored by SSM Dojo — they're read from your standard `~/.aws` files
-  through the AWS SDK.
+- **SSH key passphrases** and **sudo passwords** are held in memory only while a connection is
+  active, and cleared when it stops or the app restarts. They are never written to disk.
+- **Saved RDP passwords** (optional) are encrypted with your operating system's secure credential
+  store (macOS Keychain, Windows Credential Manager, Linux secret service). The plain password is
+  never written to disk.
 
 ## What SSM Dojo can do on your machine
 
-Because it drives real tooling, SSM Dojo can: start/stop `aws ssm` sessions, open SSH connections,
-run remote commands for file operations (including under `sudo` when you supply a password), free
-local ports by terminating the holding process (with your consent), and launch your native RDP
-client. All of this is local and user-initiated; nothing is exposed to the network beyond the AWS
-API calls your credentials authorize.
+Because it drives real tooling on your behalf, SSM Dojo can start and stop SSM sessions, open SSH
+connections, run remote file operations (including with `sudo` when you supply a password), free a
+busy local port by stopping the process holding it (only after you confirm), and launch your native
+RDP client. All of it is local and initiated by you; nothing is exposed to the network beyond the
+AWS calls your credentials authorize.
+
+## Good practices
+
+- Keep the **AWS CLI** and **Session Manager Plugin** up to date.
+- Scope your AWS credentials to the least privilege you need (see
+  [Installation → IAM permissions](/guide/installation#prerequisites)).
+- Prefer **SSO** or short-lived credentials over long-lived access keys where you can.
+- Only save an RDP password if you're comfortable with it living in your OS credential store.

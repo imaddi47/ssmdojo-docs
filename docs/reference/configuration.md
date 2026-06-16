@@ -1,78 +1,53 @@
-# Configuration & data
+# Your data & settings
 
-SSM Dojo stores its state as plain files in your OS config directory. There's no database and no
-cloud sync — everything is local to your machine.
+SSM Dojo keeps everything **on your machine**. There's no account, no database, and no cloud sync —
+your settings, saved connections, and history live in local files, and your AWS credentials are
+read from your existing AWS configuration.
 
-## Config directory
+## Where your data lives
 
-The location is resolved per-OS (via `env-paths` for the app id `ssm-manager`):
+SSM Dojo stores its files in your operating system's standard app-data location:
 
-| OS | Path |
+| OS | Folder |
 | --- | --- |
 | **macOS** | `~/Library/Application Support/ssm-manager/` |
 | **Linux** | `~/.config/ssm-manager/` |
 | **Windows** | `%APPDATA%\ssm-manager\` |
 
-## Files
+Inside that folder you'll find:
 
-| File | Contents |
+| What | Contents |
 | --- | --- |
-| `settings.json` | User preferences (theme, accent, default profile/region, log level, download dir). |
-| `tunnels.json` | All tunnel/connection definitions. |
-| `history.json` | Append-only transfer/delete audit log (most recent 500). |
-| `secrets.json` | Encrypted RDP passwords, keyed by tunnel (OS-keychain encrypted). |
-| `known_hosts/<tunnelId>` | Per-connection pinned SSH host keys (trust-on-first-use). |
+| **Settings** | Your preferences (theme, accent, default profile/region, log level, download folder). |
+| **Connections** | Your saved tunnels and SSH connections. |
+| **Transfer history** | A log of recent uploads, downloads, and deletes. |
+| **Saved RDP passwords** | Encrypted with your OS credential store (never stored in plain text). |
+| **Known hosts** | Pinned SSH host keys for trust-on-first-use. |
 
-Writes are **atomic** (write to a temp file, then rename) and serialized, so concurrent updates
-can't corrupt a file or lose an update.
+To **reset** SSM Dojo to a clean state, quit the app and remove that folder. To **back up** your
+connections, copy it.
 
-## Settings schema
+## Settings
 
-```ts
-interface Settings {
-  theme: 'system' | 'light' | 'dark'
-  accent: 'violet' | 'teal'
-  defaultProfile: string | null
-  defaultRegion: string | null
-  logLevel: 'error' | 'warn' | 'info' | 'debug'
-  downloadDir: string | null
-}
-```
+You can change these on the **Settings** screen (see [Settings & theming](/features/settings)):
 
-## Tunnel definition schema
-
-```ts
-interface TunnelDefinition {
-  id: string                          // assigned by the server
-  name: string
-  profile: string                     // AWS profile
-  region: string                      // AWS region
-  target: string                      // instance ID (or host)
-  mode: 'instance' | 'remote-host'
-  localPort: number                   // 1–65535
-  remotePort: number                  // 1–65535
-  remoteHost?: string                 // for mode === 'remote-host'
-  autoReconnect: boolean
-  ssh?: { user: string; keyPath?: string }
-  hostKey?: string                    // pinned SSH host key (TOFU)
-  createdAt: string                   // ISO 8601
-}
-```
+- **Theme** — `system`, `light`, or `dark`.
+- **Accent** — `violet` or `teal`.
+- **Default profile / region** — pre-selected on launch so you don't re-pick them.
+- **Log level** — how verbose the app's logs are.
+- **Download folder** — default destination for file downloads.
 
 ## AWS credentials
 
-SSM Dojo does **not** store AWS credentials. It reads named profiles from your standard
-`~/.aws/config` and `~/.aws/credentials` files, and resolves them through the AWS SDK's credential
-providers (including SSO and assume-role). Expired or login-required credentials are detected and
-surfaced in the UI.
+SSM Dojo does **not** store your AWS credentials. It reads your named profiles from the standard
+`~/.aws/config` and `~/.aws/credentials` files (including SSO and assume-role) and uses them
+directly. If a profile's credentials are expired or need an SSO login, SSM Dojo tells you.
 
-## Secrets and passphrases
+## Secrets
 
-- **RDP passwords** (optional) are encrypted with your OS keychain via Electron `safeStorage`
-  (macOS Keychain / Windows DPAPI / Linux libsecret) and stored in `secrets.json`. Plaintext is
-  never written to disk.
-- **SSH passphrases** and **sudo passwords** are held **in memory only** for the life of a
-  connection. They're cleared when the connection is stopped, its config changes, the tunnel is
-  deleted, or the app restarts — and never persisted.
+- **Saved RDP passwords** (optional) are encrypted using your OS credential store. The plain text
+  is never written to disk.
+- **SSH key passphrases** and **sudo passwords** are kept in memory only while a connection is
+  active, and are cleared when the connection stops or the app restarts — they're never saved.
 
-See the [Security model](/reference/security) for the full picture.
+See [Security & privacy](/reference/security) for the full picture.

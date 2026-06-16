@@ -12,9 +12,6 @@ hero:
     - theme: alt
       text: Installation
       link: /guide/installation
-    - theme: alt
-      text: View on GitHub
-      link: https://github.com/imaddi47/ssm-manager-e2e
 
 features:
   - icon: 🔌

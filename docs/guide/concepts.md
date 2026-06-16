@@ -36,21 +36,19 @@ A tunnel forwards a **local port** on your machine to a **remote port**, in one 
 ## Instances
 
 The **Instances** view discovers EC2/SSM-managed instances for the current profile + region by
-combining SSM (`DescribeInstanceInformation`) and EC2 (`DescribeInstances`) data. You can filter,
-see SSM reachability, and create a tunnel or SSH connection directly from an instance.
+combining AWS Systems Manager and EC2 data. You can filter, see SSM reachability, and create a
+tunnel or SSH connection directly from an instance.
 
-## Sessions and the local server
+## Sessions
 
-When you start a tunnel, SSM Dojo launches an `aws ssm start-session` process via the Session
-Manager Plugin and tracks its lifecycle:
+When you start a tunnel, SSM Dojo opens an SSM session (through the Session Manager Plugin) and
+tracks its lifecycle, with status and logs streaming live to the card:
 
 ```
 idle → starting → connected → (reconnecting) → stopped | error
 ```
 
-Status and logs stream live to the UI over a WebSocket. All of this runs inside the local server
-bound to `127.0.0.1` — see [Architecture](/reference/architecture) and the
-[Security model](/reference/security).
+Everything runs locally on your machine — see [Security & privacy](/reference/security).
 
 ## Trust on first use (TOFU)
 

@@ -1,85 +1,64 @@
 # Changelog
 
-Release history for SSM Dojo, newest first. This page is a curated, human-readable summary.
-Per-version notes generated from conventional commits live in the repo's
-[`changelog/`](https://github.com/imaddi47/ssmdojo-docs/tree/main/changelog) directory, and the
-complete per-commit history is in the [source repo](https://github.com/imaddi47/ssm-manager-e2e).
-
-Versioning follows [Semantic Versioning](https://semver.org/).
+Release history for SSM Dojo, newest first. Versioning follows
+[Semantic Versioning](https://semver.org/). Download any release from the
+[releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
 ## v0.2.1 — 2026-06-15
 
-**Fixed**
-
-- Release pipeline now publishes a **signed DMG**, and verify + E2E are gated to manual releases (#46).
+- Reliability and packaging improvements to the release/update pipeline so updates install cleanly.
 
 ## v0.2.0 — 2026-06-15
 
-Minor version bump opening the 0.2 line. No functional changes since v0.1.3.
+- Version milestone opening the 0.2 line. No user-facing changes since v0.1.3.
 
 ## v0.1.3 — 2026-06-15
 
-**Fixed**
-
-- Space-free release artifact names so GitHub publishing stops colliding (#50).
-- Truncate long tunnel forward addresses so the row can't overflow (#49). <Badge type="info" text="also listed under v0.1.1" />
+- Smoother update delivery.
+- Long tunnel addresses no longer overflow their row in the list.
 
 ## v0.1.2 — 2026-06-15
 
-Maintenance release — release tooling only, no user-facing changes.
+- Maintenance release — no user-facing changes.
 
 ## v0.1.1 — 2026-06-15
 
-**Fixed**
-
-- Truncate long tunnel forward address so the row can't overflow (#49).
+- Long tunnel addresses no longer overflow their row in the list.
 
 ## v0.1.0 — 2026-06-15
 
-The first release. Highlights by area (see the
-[full v0.1.0 notes](https://github.com/imaddi47/ssmdojo-docs/blob/main/changelog/v0.1.0.md) for the
-complete, per-commit list):
+The first release. Highlights by area:
 
 **Tunnels**
 
-- SSM port-forwarding tunnels with create, edit-in-place, start/stop/retry, and real traffic metering.
-- Remote-host tunnels with labeled ports; create a tunnel straight from a discovered instance.
-- Local-port conflict detection with an informed-consent prompt (service, cwd, PIDs) and free-port flow.
+- SSM port-forwarding tunnels with create, edit-in-place, start/stop/retry, and live status.
+- Remote-host tunnels (reach a database or service behind an instance); create a tunnel straight
+  from a discovered instance.
+- Local-port conflict detection with an informed-consent prompt and a one-click free-port option.
 
 **Instances**
 
-- All-EC2 scan and SSM/EC2 discovery with filtering and ssh/tunnel badges.
+- Discover EC2/SSM-managed instances with search, reachability, and SSH/tunnel badges.
 - Create an SSH connection or tunnel directly from an instance.
 
 **SSH & Terminal**
 
-- Direct SSH connections with connect/disconnect and live traffic metering.
-- xterm SSH terminal pane with per-tunnel connection pool, session persistence across navigation,
-  encrypted-key passphrase prompts, and host-key trust-on-first-use.
+- Direct SSH connections with connect/disconnect and live status.
+- A built-in terminal that survives navigation, with encrypted-key passphrase prompts and
+  host-key trust-on-first-use.
 
 **File transfers**
 
-- Finder-style file explorer with transfers over direct SSH.
-- Sudo file operations (list/delete/du) and sudo streaming download/upload.
-- Delete, sticky action bar, transfer history, and overwrite confirmation.
+- A Finder-style file explorer with uploads/downloads over SSH.
+- Privileged (sudo) file operations and transfers.
+- Delete, overwrite confirmation, and a transfer history log.
 
 **RDP**
 
-- Mark a tunnel for RDP and connect via the native client; in-place start; stored encrypted credentials.
+- Mark a tunnel for RDP and launch your native client; optionally store credentials securely.
 
-**Security**
+**Security & polish**
 
-- Lock the local server to the app — a per-launch token on every route plus session injection.
-- Reject foreign-origin WebSocket connections (CSWSH protection).
-- Gate the local API with a per-launch token.
-
-**Platform & UX**
-
-- macOS auto-update and dual CI release pipelines; rebrand to SSM Dojo with a launch splash.
-- UX polish — floating combobox, custom checkboxes, clear buttons, copy-path, skeletons.
-
-::: tip Note on patch attribution
-PR #49 (tunnel address truncation) is recorded under both **v0.1.1** and **v0.1.3** in the raw
-per-version notes — it shipped in the 0.1.1 patch and was carried into 0.1.3. The fix is present
-from v0.1.1 onward.
-:::
+- The app's local connection is hardened so only SSM Dojo can use it.
+- macOS auto-update and a refreshed SSM Dojo look, with UX polish throughout (combobox, custom
+  checkboxes, clear buttons, copy-path, loading skeletons).

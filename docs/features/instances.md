@@ -5,17 +5,11 @@ region, so you can act on them without copying instance IDs around.
 
 ## Discovery
 
-SSM Dojo combines two AWS calls:
-
-- **SSM** `DescribeInstanceInformation` (paginated) — finds SSM-managed instances and their ping
-  status.
-- **EC2** `DescribeInstances` — enriches each instance with metadata.
-
-The merged result shows, per instance:
+SSM Dojo combines AWS Systems Manager and EC2 data to show, per instance:
 
 - Instance ID and **Name** tag
 - Instance type, availability zone, private IP, VPC
-- **SSM reachability** (whether the SSM Agent is online)
+- **SSM reachability** (whether the instance is reachable via Session Manager)
 - Platform (Linux/Windows) and instance state
 
 ## Scan scope
@@ -26,8 +20,8 @@ managed.
 
 ## Filtering
 
-Use the filter box to narrow the list — it does a case-insensitive substring match on the
-instance ID or Name tag.
+Use the filter box to narrow the list — it matches on the instance ID or Name tag
+(case-insensitive).
 
 ## Acting on an instance
 
@@ -36,16 +30,11 @@ From an instance you can:
 - **Create a tunnel** — opens the tunnel form with the target pre-filled. See [Tunnels](/features/tunnels).
 - **Create an SSH connection** — set up a direct SSH connection. See [SSH & Terminal](/features/ssh-and-terminal).
 
-Badges on each instance indicate whether it already has SSH or tunnel connections defined, so you
-can tell at a glance what's already wired up.
+Badges on each instance show whether it already has SSH or tunnel connections defined, so you can
+tell at a glance what's already wired up.
 
 ::: tip Profile + region required
 Discovery is scoped to the profile and region selected in the top bar. If the list is empty,
 confirm your credentials are valid for that profile (SSO may need `aws sso login`) and that
 instances in that region have the SSM Agent running.
 :::
-
-## Related API
-
-Backed by `GET /api/instances?profile=&region=&q=` (and instance-address resolution). See the
-[Server API reference](/reference/api).

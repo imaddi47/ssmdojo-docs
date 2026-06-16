@@ -25,7 +25,4 @@ toggles between light and dark.
 Setting a **default profile** and **default region** means SSM Dojo opens ready to work — no need
 to re-pick them in the top bar each launch. This is the quickest win after installing.
 
-## Related API
-
-Settings are read/written via `GET /api/settings` and `PUT /api/settings`. See the
-[Server API reference](/reference/api).
+Where settings are stored is covered in [Your data & settings](/reference/configuration).

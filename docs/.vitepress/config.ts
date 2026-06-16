@@ -1,8 +1,11 @@
 import { defineConfig } from 'vitepress'
 
-// SSM Dojo documentation site.
+// SSM Dojo documentation site (public).
+// This site documents how to USE the app. It intentionally contains no
+// internal/source-code details about the (private) implementation.
+//
 // `base` is '/' by default. If you deploy to GitHub Pages as a *project* site
-// (e.g. https://imaddi47.github.io/ssmdojo-docs/), set base to '/ssmdojo-docs/'.
+// (e.g. https://<org>.github.io/ssmdojo-docs/), set base to '/ssmdojo-docs/'.
 export default defineConfig({
   title: 'SSM Dojo',
   description:
@@ -29,14 +32,8 @@ export default defineConfig({
     nav: [
       { text: 'Guide', link: '/guide/introduction' },
       { text: 'Features', link: '/features/tunnels' },
-      { text: 'Reference', link: '/reference/architecture' },
-      {
-        text: 'Releases',
-        items: [
-          { text: 'Changelog', link: '/releases/changelog' },
-          { text: 'Release process', link: '/releases/release-process' },
-        ],
-      },
+      { text: 'Security & data', link: '/reference/security' },
+      { text: 'Changelog', link: '/releases/changelog' },
     ],
 
     sidebar: {
@@ -67,37 +64,22 @@ export default defineConfig({
       ],
       '/reference/': [
         {
-          text: 'Reference',
+          text: 'Security & data',
           items: [
-            { text: 'Architecture', link: '/reference/architecture' },
-            { text: 'Server API', link: '/reference/api' },
-            { text: 'Configuration & data', link: '/reference/configuration' },
-            { text: 'Security model', link: '/reference/security' },
+            { text: 'Security & privacy', link: '/reference/security' },
+            { text: 'Your data & settings', link: '/reference/configuration' },
           ],
         },
       ],
       '/releases/': [
         {
           text: 'Releases',
-          items: [
-            { text: 'Changelog', link: '/releases/changelog' },
-            { text: 'Release process', link: '/releases/release-process' },
-          ],
+          items: [{ text: 'Changelog', link: '/releases/changelog' }],
         },
       ],
     },
 
-    socialLinks: [
-      { icon: 'github', link: 'https://github.com/imaddi47/ssm-manager-e2e' },
-    ],
-
     search: { provider: 'local' },
-
-    editLink: {
-      pattern:
-        'https://github.com/imaddi47/ssmdojo-docs/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
-    },
 
     footer: {
       message: 'Documentation for SSM Dojo.',

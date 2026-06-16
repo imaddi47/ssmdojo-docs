@@ -18,17 +18,18 @@ per-version changelogs, and serves as the auto-update release feed for the deskt
 Built with [VitePress](https://vitepress.dev) (static — no database).
 
 ```bash
-# Node 18+ (see .nvmrc → 20)
-npm install
-npm run docs:dev       # local dev server with hot reload
-npm run docs:build     # production build → docs/.vitepress/dist
-npm run docs:preview   # preview the production build
+# Node 18+ (see .nvmrc); this repo uses pnpm
+pnpm install
+pnpm docs:dev       # local dev server with hot reload
+pnpm docs:build     # production build → docs/.vitepress/dist
+pnpm docs:preview   # preview the production build
 ```
 
 The content lives in `docs/` as Markdown; navigation is configured in
 `docs/.vitepress/config.ts`.
 
-## Source project
+## Documentation scope
 
-The product being documented is [ssm-manager-e2e](https://github.com/imaddi47/ssm-manager-e2e).
-Documentation tracks the latest released tag.
+This site documents how to **install and use** the SSM Dojo desktop app — it intentionally
+excludes implementation details of the (private) application source. The published documentation
+website and the release downloads are the public surface; the app's codebase is not.
