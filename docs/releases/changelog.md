@@ -15,25 +15,9 @@ Release history for SSM Dojo, newest first. Versioning follows
 - Added a **Check for Updates** menu item.
 - The app now shows its correct name.
 
-## v0.2.1 — 2026-06-15
-
-- Reliability and packaging improvements to the release/update pipeline so updates install cleanly.
-
-## v0.2.0 — 2026-06-15
-
-- Version milestone opening the 0.2 line. No user-facing changes since v0.1.3.
-
 ## v0.1.3 — 2026-06-15
 
 - Smoother update delivery.
-- Long tunnel addresses no longer overflow their row in the list.
-
-## v0.1.2 — 2026-06-15
-
-- Maintenance release — no user-facing changes.
-
-## v0.1.1 — 2026-06-15
-
 - Long tunnel addresses no longer overflow their row in the list.
 
 ## v0.1.0 — 2026-06-15
