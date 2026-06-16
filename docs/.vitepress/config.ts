@@ -88,8 +88,9 @@ export default defineConfig({
     search: { provider: 'local' },
 
     footer: {
-      message: 'Documentation for SSM Dojo.',
-      copyright: 'SSM Dojo — AWS Systems Manager, made approachable.',
+      message: 'Documentation for <span class="brand-name">SSM Dojo</span>.',
+      copyright:
+        '<span class="brand-name">SSM Dojo</span> — AWS Systems Manager, made approachable.',
     },
   },
 })

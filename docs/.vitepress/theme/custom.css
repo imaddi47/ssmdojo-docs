@@ -52,3 +52,13 @@
 .VPNavBarTitle .logo {
   border-radius: 6px;
 }
+
+/* "SSM Dojo" wordmark in teal wherever it appears as branding. */
+.VPNavBarTitle .title {
+  color: var(--vp-c-brand-1);
+}
+
+.brand-name {
+  color: var(--vp-c-brand-1);
+  font-weight: 600;
+}
