@@ -4,9 +4,11 @@ import { defineConfig } from 'vitepress'
 // This site documents how to USE the app. It intentionally contains no
 // internal/source-code details about the (private) implementation.
 //
-// `base` is '/' by default. If you deploy to GitHub Pages as a *project* site
-// (e.g. https://<org>.github.io/ssmdojo-docs/), set base to '/ssmdojo-docs/'.
+// Deployed to GitHub Pages as a project site at
+// https://imaddi47.github.io/ssmdojo-docs/ , so `base` is '/ssmdojo-docs/'.
+// If you move to a custom domain served at the root, change base back to '/'.
 export default defineConfig({
+  base: '/ssmdojo-docs/',
   title: 'SSM Dojo',
   description:
     'Cross-platform AWS Systems Manager client — port-forwarding tunnels, SSH, file transfer, and RDP, in a fast desktop app.',
