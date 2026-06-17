@@ -5,14 +5,14 @@ means for you.
 
 ## Everything runs locally
 
-SSM Dojo runs entirely on your computer. It isn't a hosted service and it doesn't phone home — the
+SSM Dojo runs entirely on your computer. It isn't a hosted service and it doesn't phone home. The
 only network calls it makes are to **AWS**, using **your** credentials, to do the things you ask
 (list instances, start sessions, transfer files). Your credentials, connections, and files are
 never sent to any third party.
 
 ## Not exposed to your network
 
-The app's internal engine listens only on your own machine (loopback) — it isn't reachable from
+The app's internal engine listens only on your own machine (loopback). It isn't reachable from
 your network or the internet. On top of that, the desktop app authorizes itself to that engine
 with a **fresh secret generated every time you launch**, so nothing else on your machine can drive
 it.
@@ -27,7 +27,7 @@ the app tells you rather than failing silently.
 
 For SSH and file transfers, SSM Dojo remembers a host's identity the first time you connect
 (trust-on-first-use) and checks it on every later connection. If a host's key changes unexpectedly
-— a possible man-in-the-middle — the connection is refused. If the change is legitimate (for
+(a possible man-in-the-middle), the connection is refused. If the change is legitimate (for
 example, the server was rebuilt), you can reset the stored key by editing the connection.
 
 ## Secrets handling

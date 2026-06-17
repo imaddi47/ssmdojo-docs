@@ -12,7 +12,7 @@ export default defineConfig({
   base: '/',
   title: 'SSM Dojo',
   description:
-    'Cross-platform AWS Systems Manager client — port-forwarding tunnels, SSH, file transfer, and RDP, in a fast desktop app.',
+    'Cross-platform AWS Systems Manager client: port-forwarding tunnels, SSH, file transfer, and RDP, in a fast desktop app.',
   lang: 'en-US',
   cleanUrls: true,
   lastUpdated: true,
@@ -27,7 +27,7 @@ export default defineConfig({
       {
         name: 'og:description',
         content:
-          'Tunnels, SSH, file transfer, and RDP for AWS Systems Manager — one desktop app.',
+          'Tunnels, SSH, file transfer, and RDP for AWS Systems Manager, all in one desktop app.',
       },
     ],
   ],
@@ -49,6 +49,7 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'Installation', link: '/guide/installation' },
+            { text: 'Updating', link: '/guide/updates' },
             { text: 'Quickstart', link: '/guide/quickstart' },
             { text: 'Core concepts', link: '/guide/concepts' },
             { text: 'Troubleshooting', link: '/guide/troubleshooting' },
@@ -90,7 +91,7 @@ export default defineConfig({
     footer: {
       message: 'Documentation for <span class="brand-name">SSM Dojo</span>.',
       copyright:
-        '<span class="brand-name">SSM Dojo</span> — AWS Systems Manager, made approachable.',
+        '<span class="brand-name">SSM Dojo</span>. AWS Systems Manager, made approachable.',
     },
   },
 })

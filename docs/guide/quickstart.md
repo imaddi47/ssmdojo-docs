@@ -1,6 +1,6 @@
 # Quickstart
 
-This walks you through opening your first SSM tunnel — for example, forwarding a remote
+This walks you through opening your first SSM tunnel. For example, forwarding a remote
 database port to your laptop.
 
 ## 1. Pick a profile and region
@@ -26,13 +26,13 @@ See [Instances](/features/instances) for details.
 
 You can create a tunnel straight from a discovered instance, or open **Tunnels → Create**. Fill in:
 
-- **Name** — a label for the tunnel.
-- **Mode** — *instance* (forward to a port on the instance itself) or *remote-host* (forward to a
+- **Name**: a label for the tunnel.
+- **Mode**: *instance* (forward to a port on the instance itself) or *remote-host* (forward to a
   host reachable from the instance, e.g. an RDS endpoint).
-- **Target** — the instance ID (auto-filled when created from Instances).
-- **Local port** — the port on your machine, e.g. `5432`.
-- **Remote port** — the port on the target, e.g. `5432`.
-- **Remote host** — only for *remote-host* mode (e.g. `db.internal.example.com`).
+- **Target**: the instance ID (auto-filled when created from Instances).
+- **Local port**: the port on your machine, e.g. `5432`.
+- **Remote port**: the port on the target, e.g. `5432`.
+- **Remote host**: only for *remote-host* mode (e.g. `db.internal.example.com`).
 
 Save it. See [Tunnels](/features/tunnels) for the full field reference and editing.
 
@@ -60,7 +60,7 @@ psql -h 127.0.0.1 -p 5432 -U myuser mydb
 
 ## Where to go next
 
-- [Tunnels](/features/tunnels) — modes, port-conflict handling, traffic.
-- [SSH & Terminal](/features/ssh-and-terminal) — open a shell over a tunnel.
-- [File transfers](/features/file-transfers) — move files over SSH.
-- [Core concepts](/guide/concepts) — profiles, regions, connection kinds.
+- [Tunnels](/features/tunnels): modes, port-conflict handling, traffic.
+- [SSH & Terminal](/features/ssh-and-terminal): open a shell over a tunnel.
+- [File transfers](/features/file-transfers): move files over SSH.
+- [Core concepts](/guide/concepts): profiles, regions, connection kinds.

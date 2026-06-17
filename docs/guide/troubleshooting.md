@@ -31,7 +31,7 @@ your login shell's `PATH`).
 ## No instances appear
 
 - Confirm the **profile** and **region** in the top bar are the ones your instances live in.
-- For **SSO** profiles, run `aws sso login --profile <name>` first — SSM Dojo will flag
+- For **SSO** profiles, run `aws sso login --profile <name>` first. SSM Dojo will flag
   `sso-login-required`/expired credentials.
 - Only instances with a running **SSM Agent** and the right instance profile show up as
   SSM-reachable. Use the all-EC2 scan to see instances that aren't yet SSM-managed.
@@ -44,7 +44,7 @@ from a prior run, SSM Dojo waits briefly for it to release on its own.
 
 ::: warning Windows note
 Rich conflict details are available on macOS and Linux. On Windows the conflict detail is more
-limited — pick a different local port if a start fails on a busy port.
+limited. Pick a different local port if a start fails on a busy port.
 :::
 
 ## SSH key passphrase keeps prompting
@@ -61,11 +61,11 @@ connection to reset the stored host key, then reconnect.
 
 ## RDP won't launch
 
-You need a native RDP client registered for `.rdp` files — e.g. **Microsoft Remote Desktop** on
-macOS, the built-in `mstsc` on Windows. The tunnel must be **connected** before launching. If no
+You need a native RDP client registered for `.rdp` files (e.g., **Microsoft Remote Desktop** on
+macOS, the built-in `mstsc` on Windows). The tunnel must be **connected** before launching. If no
 client is registered, SSM Dojo reports a platform-specific error.
 
 ## Where are my settings / tunnels stored?
 
-In your OS config directory under `ssm-manager/` — see
+In your OS config directory under `ssm-manager/`. See
 [Configuration & data](/reference/configuration) for exact paths and what each file holds.

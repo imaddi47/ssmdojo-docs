@@ -4,7 +4,7 @@ layout: home
 hero:
   name: SSM Dojo
   text: AWS Systems Manager, made approachable
-  tagline: Port-forwarding tunnels, SSH, file transfer, and RDP — in one fast desktop app for macOS, Linux, and Windows.
+  tagline: Port-forwarding tunnels, SSH, file transfer, and RDP. One fast desktop app for macOS, Linux, and Windows.
   image:
     src: /logo.svg
     alt: SSM Dojo

@@ -1,7 +1,7 @@
 # Your data & settings
 
-SSM Dojo keeps everything **on your machine**. There's no account, no database, and no cloud sync —
-your settings, saved connections, and history live in local files, and your AWS credentials are
+SSM Dojo keeps everything **on your machine**. There's no account, no database, and no cloud sync.
+Your settings, saved connections, and history live in local files, and your AWS credentials are
 read from your existing AWS configuration.
 
 ## Where your data lives
@@ -31,11 +31,11 @@ connections, copy it.
 
 You can change these on the **Settings** screen (see [Settings & theming](/features/settings)):
 
-- **Theme** — `system`, `light`, or `dark`.
-- **Accent** — `violet` or `teal`.
-- **Default profile / region** — pre-selected on launch so you don't re-pick them.
-- **Log level** — how verbose the app's logs are.
-- **Download folder** — default destination for file downloads.
+- **Theme**: `system`, `light`, or `dark`.
+- **Accent**: `violet` or `teal`.
+- **Default profile / region**: pre-selected on launch so you don't re-pick them.
+- **Log level**: how verbose the app's logs are.
+- **Download folder**: default destination for file downloads.
 
 ## AWS credentials
 
@@ -48,6 +48,6 @@ directly. If a profile's credentials are expired or need an SSO login, SSM Dojo 
 - **Saved RDP passwords** (optional) are encrypted using your OS credential store. The plain text
   is never written to disk.
 - **SSH key passphrases** and **sudo passwords** are kept in memory only while a connection is
-  active, and are cleared when the connection stops or the app restarts — they're never saved.
+  active, and are cleared when the connection stops or the app restarts; they're never saved.
 
 See [Security & privacy](/reference/security) for the full picture.

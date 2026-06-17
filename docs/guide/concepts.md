@@ -17,8 +17,8 @@ Everything you do is scoped to an **AWS profile** and a **region**, chosen in th
 A **connection** in SSM Dojo is a saved definition you can start, stop, edit, and reuse. Every
 connection is tied to a profile, region, and target. There are two kinds:
 
-- **Tunnel (SSM)** — an SSM port-forwarding session. The default and primary workflow.
-- **SSH (direct)** — a direct SSH connection (still surfaced as a connection you manage).
+- **Tunnel (SSM)**: an SSM port-forwarding session. The default and primary workflow.
+- **SSH (direct)**: a direct SSH connection (still surfaced as a connection you manage).
 
 Connections are persisted to disk so they survive restarts (see
 [Configuration & data](/reference/configuration)).
@@ -27,9 +27,9 @@ Connections are persisted to disk so they survive restarts (see
 
 A tunnel forwards a **local port** on your machine to a **remote port**, in one of two modes:
 
-- **Instance mode** — forward to a port on the SSM-managed instance itself
+- **Instance mode**: forward to a port on the SSM-managed instance itself
   (`AWS-StartPortForwardingSession`). Example: reach a service running on the box.
-- **Remote-host mode** — forward to a host reachable *from* the instance
+- **Remote-host mode**: forward to a host reachable *from* the instance
   (`AWS-StartPortForwardingSessionToRemoteHost`). Example: reach an RDS database or another
   internal endpoint, using the instance as a jump host. This mode requires a **remote host** value.
 
@@ -48,7 +48,7 @@ tracks its lifecycle, with status and logs streaming live to the card:
 idle → starting → connected → (reconnecting) → stopped | error
 ```
 
-Everything runs locally on your machine — see [Security & privacy](/reference/security).
+Everything runs locally on your machine, see [Security & privacy](/reference/security).
 
 ## Trust on first use (TOFU)
 

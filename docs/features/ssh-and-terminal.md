@@ -1,17 +1,29 @@
 # SSH & Terminal
 
-SSM Dojo supports **direct SSH connections** and a built-in **terminal** that runs an interactive
-shell over your connection.
+SSM Dojo runs an interactive shell and a file browser over SSH. The SSH screen lists every
+connection that can speak SSH: standalone SSH machines and SSM tunnels that have SSH turned on.
 
-## Direct SSH connections
+## Connecting
 
-A connection can be a direct SSH connection rather than an SSM tunnel. You manage it like any
-other connection — connect, disconnect, and see live status — and you can create one straight from
-a discovered [instance](/features/instances).
+Connecting happens when you open a connection's **Terminal** or **Files**. SSM Dojo brings the
+connection up for you and the status light turns green once it is ready, so there is no separate
+Connect step to click first. While a connection is running, a **Disconnect** button is there if you
+want to drop it.
 
-- **Connect / Disconnect** controls bring the SSH connection up or down.
-- The instance's address is resolved for you when creating from Instances.
-- Connections stay responsive even while file transfers are running.
+Each row shows the connection's status and identity along with four actions:
+
+- **Files** opens the [file browser](/features/file-transfers) for that machine.
+- **Terminal** opens a shell (see below).
+- **Edit** changes the connection. A standalone SSH machine is edited in place; for a tunnel that
+  has SSH enabled, Edit takes you to the [Tunnels](/features/tunnels) screen, where the tunnel
+  itself is managed.
+- **Delete** removes a standalone SSH connection after a confirmation dialog.
+
+If a connection drops or fails to come up, SSM Dojo shows a notification with the error instead of
+leaving you to read it off the status light.
+
+You can also create a standalone SSH connection straight from a discovered
+[instance](/features/instances); its address is filled in for you.
 
 ## Authentication
 
@@ -24,8 +36,8 @@ When SSM Dojo opens an SSH connection it resolves your key in this order:
 ### Encrypted keys (passphrases)
 
 If your private key is passphrase-protected, SSM Dojo prompts you for the passphrase and retries
-the connection (up to a few attempts). **Passphrases are kept in memory only** — never written to
-disk — and are cleared when the connection is stopped or the app restarts.
+the connection (up to a few attempts). Passphrases are kept in memory only, never written to disk,
+and are cleared when the connection stops or the app restarts.
 
 ### Host-key trust on first use
 
@@ -36,16 +48,16 @@ key.
 
 ## Terminal
 
-The **Terminal** gives you a full shell over an SSH connection.
+The Terminal gives you a full shell over an SSH connection.
 
-- **Persistent across navigation** — switching tabs or screens doesn't kill your shell. Come back
-  and it's still there.
+- **Persistent across navigation.** Switching tabs or screens does not kill your shell. Come back
+  and it is still there.
 - **Resizes** with the window.
 - **Passphrase prompt** appears inline if the key is encrypted.
-- **Stopped state with retry** — if the session ends, the terminal shows a clear stopped state you
+- **Stopped state with retry.** If the session ends, the terminal shows a clear stopped state you
   can retry from.
 
 ::: warning Session lifetime
-A terminal session stays alive while you navigate, but stopping the underlying tunnel/connection
+A terminal session stays alive while you navigate, but stopping the underlying tunnel or connection
 ends the shell, and closing the app stops all connections and terminals.
 :::

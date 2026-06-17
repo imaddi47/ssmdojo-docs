@@ -4,23 +4,23 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
-## v0.1.5 — 2026-06-16
+## v0.1.5, 2026-06-16
 
 - Added an **About** panel.
 - Minor and major auto-updates now ask for your consent before installing.
 
-## v0.1.4 — 2026-06-16
+## v0.1.4, 2026-06-16
 
 - More compact **Forward to** control on tunnels.
 - Added a **Check for Updates** menu item.
 - The app now shows its correct name.
 
-## v0.1.3 — 2026-06-15
+## v0.1.3, 2026-06-15
 
 - Smoother update delivery.
 - Long tunnel addresses no longer overflow their row in the list.
 
-## v0.1.0 — 2026-06-15
+## v0.1.0, 2026-06-15
 
 The first release. Highlights by area:
 
