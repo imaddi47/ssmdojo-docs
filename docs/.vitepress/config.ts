@@ -49,6 +49,7 @@ export default defineConfig({
           items: [
             { text: 'Introduction', link: '/guide/introduction' },
             { text: 'Installation', link: '/guide/installation' },
+            { text: 'Updating', link: '/guide/updates' },
             { text: 'Quickstart', link: '/guide/quickstart' },
             { text: 'Core concepts', link: '/guide/concepts' },
             { text: 'Troubleshooting', link: '/guide/troubleshooting' },

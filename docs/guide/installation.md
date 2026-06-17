@@ -64,8 +64,8 @@ Download and run the **installer** (`.exe`) from the
 
 ## Automatic updates
 
-The desktop app checks for new releases and updates itself in the background — just restart when
-prompted. You can always grab the latest build manually from the
-[releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
+The desktop app checks for new releases on launch and periodically after that, downloads them in the
+background, and prompts you to restart. See [Updating](/guide/updates) for the full behavior,
+including how patch and larger releases differ and how to check on demand.
 
 Next: [Quickstart](/guide/quickstart).

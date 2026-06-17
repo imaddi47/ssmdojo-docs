@@ -38,11 +38,13 @@ A running tunnel moves through these states, shown live on its card:
 idle → starting → connected → (reconnecting) → stopped | error
 ```
 
-- **Start** — opens the SSM session. Status and logs appear on the card in real time.
-- **Stop** — ends the session and frees the local port cleanly.
-- **Retry** — relaunches a failed tunnel.
-- **Edit in place** — expand the card to edit; if the tunnel is running, it restarts with the new
-  settings. Logs clear when a fresh session starts.
+- **Start** opens the SSM session. Status and logs appear on the card in real time.
+- **Stop** ends the session and frees the local port cleanly.
+- **Retry** relaunches a failed tunnel.
+- **Edit in place**: expand the card to edit. If the tunnel is running, it restarts with the new
+  settings, and logs clear when a fresh session starts.
+- **Delete** removes the tunnel after a confirmation dialog, so one stray click cannot wipe a saved
+  config.
 
 When a tunnel is connected, point your client at `127.0.0.1:<local port>`.
 
