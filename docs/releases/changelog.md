@@ -4,6 +4,28 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.1.8, 2026-06-17
+
+- The **SSH** screen now lists every SSH-capable connection in one place, including tunnels that
+  have SSH enabled.
+- Opening a connection's **Terminal** or **Files** now connects it for you, and the status light
+  turns green once it is up. There is no separate Connect step.
+- The file browser has a **Select SSH Machine** picker that connects the machine you choose.
+- Deleting a tunnel, SSH, or RDP connection now asks you to confirm first.
+
+## v0.1.7, 2026-06-16
+
+- The **SSH** and **RDP** sections now list every connection of that type, including tunnels that
+  have SSH or RDP enabled.
+- Added **direct RDP** connections that reach a host without an SSM tunnel.
+- A new **Files** button on tunnel and SSH rows jumps straight to the file browser for that
+  connection.
+
+## v0.1.6, 2026-06-16
+
+- Added a **Docs** link to the Help menu.
+- Fixed the copyright shown in the **About** panel.
+
 ## v0.1.5, 2026-06-16
 
 - Added an **About** panel.
