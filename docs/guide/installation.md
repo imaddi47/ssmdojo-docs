@@ -5,7 +5,7 @@ SSM Dojo ships as a desktop app for macOS, Linux, and Windows. Download it from 
 
 ## Prerequisites
 
-These are required at runtime — SSM Dojo uses the official AWS tooling:
+These are required at runtime. SSM Dojo uses the official AWS tooling:
 
 | Requirement | Why | Install |
 | --- | --- | --- |
@@ -14,12 +14,12 @@ These are required at runtime — SSM Dojo uses the official AWS tooling:
 | **AWS credentials** | Resolves your profiles, regions, and permissions | Configure `~/.aws/config` + `~/.aws/credentials` (named profiles, SSO, or assume-role) |
 
 SSM Dojo checks for the AWS CLI and Session Manager Plugin on startup and warns you if either is
-missing — tunnels can't start without them. The app also looks in common install locations and
+missing. Tunnels can't start without them. The app also looks in common install locations and
 honors your login shell's `PATH`, so tools installed in non-default places are usually found.
 
 ::: warning IAM permissions
-Your AWS credentials need permission to call Systems Manager and EC2 — for example
-`ssm:StartSession`, `ssm:DescribeInstanceInformation`, and `ec2:DescribeInstances` — and to use
+Your AWS credentials need permission to call Systems Manager and EC2. For example:
+`ssm:StartSession`, `ssm:DescribeInstanceInformation`, and `ec2:DescribeInstances`. You also need to use
 the SSM port-forwarding documents. Target instances must have the SSM Agent running and an
 instance profile that allows Session Manager.
 :::
@@ -30,13 +30,13 @@ instance profile that allows Session Manager.
 2. Open the DMG and drag **SSM Dojo** to **Applications**.
 3. Launch it.
 
-Signed & notarized builds open with no extra steps, and the app keeps itself up to date
+Signed and notarized builds open with no extra steps, and the app keeps itself up to date
 automatically.
 
 ::: warning Unsigned pre-release builds only
 If you receive an **unsigned** pre-release DMG (over Slack/AirDrop/direct download), macOS
 quarantines it and Apple Silicon may show **"SSM Dojo is damaged and can't be opened."** The app
-is **not** damaged — it's an unsigned build, and macOS offers no "Open Anyway" button for this
+is **not** damaged. It's an unsigned build, and macOS offers no "Open Anyway" button for this
 case. Drag the app to `/Applications`, then run once:
 
 ```bash

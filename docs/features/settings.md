@@ -22,7 +22,7 @@ toggles between light and dark.
 
 ## Defaults that save clicks
 
-Setting a **default profile** and **default region** means SSM Dojo opens ready to work — no need
+Setting a **default profile** and **default region** means SSM Dojo opens ready to work. No need
 to re-pick them in the top bar each launch. This is the quickest win after installing.
 
 Where settings are stored is covered in [Your data & settings](/reference/configuration).
