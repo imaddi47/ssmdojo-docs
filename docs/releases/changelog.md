@@ -4,6 +4,26 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.2.0, 2026-07-01
+
+- You can now **sign in** with Google or GitHub from the account menu in the sidebar. It shows
+  your profile and lets you sign out. Signing in is optional, and everything you used before still
+  works without an account.
+- SSM Dojo now has a **Pro** plan. Your current plan shows in the account menu, with a way to
+  upgrade from Free and links to manage billing or two-factor sign-in on the web. Pro-only
+  features are marked with a badge.
+- **Backup & Restore** (Pro) lets you export your connections and settings to a file and bring
+  them back later, on another machine, or after a reinstall. Passwords and other secrets are never
+  written to the file.
+- Backups are selective: pick exactly which connections to export or import instead of
+  all-or-nothing, and a badge shows which ones you already have. Importing won't create
+  duplicates, since it matches your existing connections and skips them by default, or overwrites
+  them if you choose. **Export all** grabs everything in one click.
+- Your plan now refreshes on its own. It is cached so it keeps working offline for a while, and it
+  updates when you come back to the app after a purchase, so you no longer have to sign out and
+  back in to pick up a new subscription.
+- Fixed the sign-in hand-off on Windows and Linux when the app starts from cold.
+
 ## v0.1.8, 2026-06-17
 
 - The **SSH** screen now lists every SSH-capable connection in one place, including tunnels that
