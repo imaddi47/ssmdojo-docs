@@ -4,6 +4,11 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.2.1, 2026-07-02
+
+- The **Files**, **SSH**, **RDP**, and **Transfer History** screens now share the same padding as
+  the **Tunnels** view, so the layout no longer shifts as you move between sections.
+
 ## v0.2.0, 2026-07-01
 
 - You can now **sign in** with Google or GitHub from the account menu in the sidebar. It shows
