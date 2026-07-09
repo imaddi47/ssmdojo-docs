@@ -22,6 +22,7 @@ Inside that folder you'll find:
 | **Connections** | Your saved tunnels and SSH connections. |
 | **Transfer history** | A log of recent uploads, downloads, and deletes. |
 | **Saved RDP passwords** | Encrypted with your OS credential store (never stored in plain text). |
+| **Saved parameter revisions (Pro)** | Up to five prior values per profile, region, and parameter name; encrypted before local storage. |
 | **Known hosts** | Pinned SSH host keys for trust-on-first-use. |
 
 To **reset** SSM Dojo to a clean state, quit the app and remove that folder. To **back up** your
@@ -47,6 +48,8 @@ directly. If a profile's credentials are expired or need an SSO login, SSM Dojo 
 
 - **Saved RDP passwords** (optional) are encrypted using your OS credential store. The plain text
   is never written to disk.
+- **Saved parameter revisions** (Pro) are encrypted before they are stored locally. They contain
+  prior values from updates made in SSM Dojo, not AWS's full parameter-version history.
 - **SSH key passphrases** and **sudo passwords** are kept in memory only while a connection is
   active, and are cleared when the connection stops or the app restarts; they're never saved.
 
