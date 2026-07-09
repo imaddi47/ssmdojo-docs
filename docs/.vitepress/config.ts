@@ -62,6 +62,7 @@ export default defineConfig({
           items: [
             { text: 'Tunnels', link: '/features/tunnels' },
             { text: 'Instances', link: '/features/instances' },
+            { text: 'Parameter Store', link: '/features/parameters' },
             { text: 'SSH & Terminal', link: '/features/ssh-and-terminal' },
             { text: 'File transfers', link: '/features/file-transfers' },
             { text: 'RDP', link: '/features/rdp' },

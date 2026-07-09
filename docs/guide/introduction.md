@@ -5,6 +5,7 @@ fiddly `aws ssm start-session` workflow into a fast, card-based app for:
 
 - **Tunnels**: SSM port-forwarding sessions to an instance or a remote host behind it (the primary feature).
 - **Instances**: discovering EC2/SSM-managed instances and acting on them.
+- **Parameter Store**: managing AWS SSM parameters and reviewing saved local revisions with Pro.
 - **SSH & Terminal**: direct SSH connections with a live terminal.
 - **File transfers**: a Finder-style browser with file uploads and downloads over SSH.
 - **RDP**: handing a tunnel off to your platform's native Remote Desktop client.

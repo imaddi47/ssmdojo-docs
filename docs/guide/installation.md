@@ -24,6 +24,14 @@ the SSM port-forwarding documents. Target instances must have the SSM Agent runn
 instance profile that allows Session Manager.
 :::
 
+::: tip Parameter Store permissions
+To use the **Parameters** view, add the relevant Parameter Store permissions to the selected
+profile: `ssm:DescribeParameters`, `ssm:GetParameter`, `ssm:PutParameter`,
+`ssm:DeleteParameter`, and the tag operations it needs. Reading a `SecureString` requires
+`kms:Decrypt`; writing one requires KMS encrypt or data-key permission for its key. See
+[Parameter Store](/features/parameters#iam-permissions) for the full action list.
+:::
+
 ## macOS
 
 1. Download the `.dmg` from the [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).

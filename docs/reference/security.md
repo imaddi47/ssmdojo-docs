@@ -37,6 +37,8 @@ example, the server was rebuilt), you can reset the stored key by editing the co
 - **Saved RDP passwords** (optional) are encrypted with your operating system's secure credential
   store (macOS Keychain, Windows Credential Manager, Linux secret service). The plain password is
   never written to disk.
+- **Saved parameter revisions** (Pro) are encrypted before local storage. They are captured only
+  for changes made through SSM Dojo and are never sent to a third party.
 
 ## What SSM Dojo can do on your machine
 
