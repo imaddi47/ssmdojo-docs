@@ -4,6 +4,15 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.0, 2026-07-09
+
+- New **Parameter Store** section: browse and search the AWS SSM Parameter Store for your selected
+  profile and region, open a parameter to see its value and revision history, and create, edit, or
+  delete parameters. Editing shows a diff of your changes before you save.
+- The startup tool check now also covers **scp** and **rsync**. scp is required for file transfers;
+  rsync is optional, and transfers fall back to scp when it is not installed, with a banner if
+  either is missing.
+
 ## v0.2.1, 2026-07-02
 
 - The **Files**, **SSH**, **RDP**, and **Transfer History** screens now share the same padding as
