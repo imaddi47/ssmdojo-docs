@@ -4,6 +4,14 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.3, 2026-07-15
+
+- **Standalone Windows download.** In addition to the [Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95), you can now download a
+  standalone Windows installer directly from the
+  [releases page](https://github.com/imaddi47/ssmdojo-docs/releases), and it keeps itself up to
+  date in the background — the same way the macOS app does. The Store remains the recommended,
+  signed option; the standalone build is unsigned, so Windows may warn on first launch.
+
 ## v0.3.1, 2026-07-15
 
 - **SSM Dojo is now on Windows.** Install it from the
