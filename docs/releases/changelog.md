@@ -4,6 +4,13 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.1, 2026-07-15
+
+- **SSM Dojo is now on Windows.** Install it from the
+  [Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95) — or with `winget install --id
+  9PGKTS2R9K95 --source msstore` — and it keeps itself up to date. Same app as on macOS: tunnels,
+  SSH, files, and RDP.
+
 ## v0.3.0, 2026-07-09
 
 - New **Parameter Store** section: browse and search the AWS SSM Parameter Store for your selected
