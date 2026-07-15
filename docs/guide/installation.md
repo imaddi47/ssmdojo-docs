@@ -1,7 +1,8 @@
 # Installation
 
-SSM Dojo ships as a desktop app for macOS, Linux, and Windows. Download it from the
-[releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
+SSM Dojo ships as a desktop app for macOS, Linux, and Windows. Get it from the
+[releases page](https://github.com/imaddi47/ssmdojo-docs/releases) (macOS & Linux) or the
+[Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95) (Windows).
 
 ## Prerequisites
 
@@ -67,8 +68,17 @@ chmod +x SSM-Dojo-*.AppImage
 
 ## Windows
 
-Download and run the **installer** (`.exe`) from the
-[releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
+SSM Dojo is published to the **Microsoft Store**, which installs the app and keeps it updated
+automatically:
+
+- [**Get SSM Dojo on the Microsoft Store**](https://apps.microsoft.com/detail/9pgkts2r9k95)
+
+Prefer the command line? Install it with
+[winget](https://learn.microsoft.com/windows/package-manager/winget/):
+
+```powershell
+winget install --id 9PGKTS2R9K95 --source msstore
+```
 
 ## Automatic updates
 
