@@ -1,8 +1,8 @@
 # Installation
 
 SSM Dojo ships as a desktop app for macOS, Linux, and Windows. Get it from the
-[releases page](https://github.com/imaddi47/ssmdojo-docs/releases) (macOS & Linux) or the
-[Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95) (Windows).
+[releases page](https://github.com/imaddi47/ssmdojo-docs/releases) (macOS, Linux, and Windows) or
+the [Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95) (Windows).
 
 ## Prerequisites
 
@@ -68,28 +68,37 @@ chmod +x SSM-Dojo-*.AppImage
 
 ## Windows
 
-SSM Dojo is published to the **Microsoft Store**, which installs the app and keeps it updated
-automatically:
+There are two ways to install on Windows. They update differently, so pick based on how you want
+updates to arrive.
 
-- [**Get SSM Dojo on the Microsoft Store**](https://apps.microsoft.com/detail/9pgkts2r9k95)
+### Standalone installer (recommended)
 
-Prefer the command line? Install it with
+Download `SSM-Dojo-<version>-x64.exe` from the
+[releases page](https://github.com/imaddi47/ssmdojo-docs/releases) and run it. Like the macOS app,
+it updates itself in the background from each new release, so you stay current without reinstalling.
+
+This build is currently unsigned, so Windows SmartScreen warns on first launch: click
+**More info → Run anyway**.
+
+### Microsoft Store
+
+Install from the [Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95), or with
 [winget](https://learn.microsoft.com/windows/package-manager/winget/):
 
 ```powershell
 winget install --id 9PGKTS2R9K95 --source msstore
 ```
 
-### Standalone installer
-
-Prefer not to use the Store? Download the standalone installer (`SSM-Dojo-<version>-x64.exe`) from the
-[releases page](https://github.com/imaddi47/ssmdojo-docs/releases). It auto-updates in the background like the
-macOS app. This build is **unsigned**, so Windows SmartScreen warns on first launch. Click **More info → Run anyway**. For a signed, hands-off install, use the Microsoft Store above.
+The Store build is signed, so there is no SmartScreen prompt. Its updates come through the
+Microsoft Store rather than the in-app updater, so new versions arrive when they are published to
+the Store, which can trail the standalone releases.
 
 ## Automatic updates
 
-The desktop app checks for new releases on launch and periodically after that, downloads them in the
-background, and prompts you to restart. See [Updating](/guide/updates) for the full behavior,
-including how patch and larger releases differ and how to check on demand.
+The standalone and macOS builds check for new releases on launch and periodically after that,
+download them in the background, and prompt you to restart. See [Updating](/guide/updates) for the
+full behavior, including how patch and larger releases differ and how to check on demand.
+
+Microsoft Store installs are the exception: they update through the Store, not the in-app updater.
 
 Next: [Quickstart](/guide/quickstart).
