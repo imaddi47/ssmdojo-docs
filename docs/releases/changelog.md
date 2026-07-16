@@ -4,6 +4,24 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.4, 2026-07-16
+
+- **New AWS credentials are picked up without a restart.** Sign into a profile after SSM Dojo is
+  already open — for example through an external credentials tool — and the app uses the fresh
+  credentials right away, instead of needing a close-and-reopen. If a profile's credentials aren't
+  valid, the Parameter Store list now says so clearly rather than looking like an empty account.
+- **Recovers from blank-screen glitches on its own.** A rare blank window after a background hiccup
+  now heals by reconnecting and reloading, so you no longer have to quit and relaunch.
+- **Settings that save more clicks.** Set a **default profile** and **region** that pre-select
+  wherever they're used, and point SSM Dojo at a **custom SSH keys folder** when your keys live
+  outside `~/.ssh`. Folder fields now have a native **Browse** button that opens your OS file
+  dialog instead of asking you to paste a path, and the screen is regrouped into clearer sections.
+- **Parameter Store improvements.** Copy any value — the current one or a saved revision — to
+  restore it quickly; select text in one side of the side-by-side diff without grabbing the other;
+  and on narrower windows the editor opens in a side drawer.
+- **Reload refreshes everything.** The top-bar Reload now refetches profiles, regions, instances,
+  and parameters together, with a brief spin so you can see it working.
+
 ## v0.3.3, 2026-07-15
 
 - **Standalone Windows download.** In addition to the [Microsoft Store](https://apps.microsoft.com/detail/9pgkts2r9k95), you can now download a
