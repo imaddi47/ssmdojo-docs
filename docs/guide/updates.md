@@ -1,7 +1,12 @@
 # Updating
 
-The desktop app keeps itself current. This page explains when it checks, what happens when a new
-version is found, and how to update on demand.
+The standalone and macOS builds keep themselves current. This page explains when they check, what
+happens when a new version is found, and how to update on demand.
+
+::: info Microsoft Store installs
+If you installed from the Microsoft Store, updates come through the Store, not the in-app updater,
+so the behavior on this page does not apply to that build.
+:::
 
 ## When it checks
 
