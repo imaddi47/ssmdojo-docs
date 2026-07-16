@@ -69,6 +69,9 @@ Choose a display mode to suit the review:
 
 Equal selections simply show that there are no content changes.
 
+Each selected value has a **Copy** button — copy a previous revision (or the current cloud value)
+and paste it back into the editor to restore it.
+
 ## IAM permissions
 
 The selected profile needs permissions appropriate to what you do. For the complete policy model,
