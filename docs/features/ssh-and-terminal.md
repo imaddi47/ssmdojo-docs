@@ -50,12 +50,9 @@ key.
 
 The Terminal gives you a full shell over an SSH connection.
 
-- **Persistent across navigation.** Switching tabs or screens does not kill your shell. Come back
-  and it is still there.
-- **Resizes** with the window.
-- **Passphrase prompt** appears inline if the key is encrypted.
-- **Stopped state with retry.** If the session ends, the terminal shows a clear stopped state you
-  can retry from.
+The terminal stays connected when you switch tabs or screens, so it is still there when you come
+back. It also resizes with the window, and shows the passphrase prompt inline if the key is
+encrypted. If the session ends, it shows a clear stopped state with a retry option.
 
 ::: warning Session lifetime
 A terminal session stays alive while you navigate, but stopping the underlying tunnel or connection

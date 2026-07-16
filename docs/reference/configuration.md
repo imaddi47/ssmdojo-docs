@@ -1,6 +1,6 @@
 # Your data & settings
 
-SSM Dojo keeps everything **on your machine**. There's no account, no database, and no cloud sync.
+SSM Dojo keeps everything on your machine. There's no account, no database, and no cloud sync.
 Your settings, saved connections, and history live in local files, and your AWS credentials are
 read from your existing AWS configuration.
 
@@ -40,7 +40,7 @@ You can change these on the **Settings** screen (see [Settings & theming](/featu
 
 ## AWS credentials
 
-SSM Dojo does **not** store your AWS credentials. It reads your named profiles from the standard
+SSM Dojo does not store your AWS credentials. It reads your named profiles from the standard
 `~/.aws/config` and `~/.aws/credentials` files (including SSO and assume-role) and uses them
 directly. If a profile's credentials are expired or need an SSO login, SSM Dojo tells you.
 

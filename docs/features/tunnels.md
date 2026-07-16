@@ -20,7 +20,7 @@ Create one from **Tunnels → Create**, or straight from a discovered instance i
 | **Auto-reconnect** | Whether to reconnect automatically. |
 | **SSH details** | Optional. Marks the tunnel for SSH (user + optional key path). |
 
-The create/edit form offers dropdowns with custom input for profile, region, instance, and key,
+The create/edit form has dropdowns with custom input for profile, region, instance, and key,
 so you can pick a discovered value or type your own.
 
 ## Modes

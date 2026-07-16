@@ -43,7 +43,7 @@ directory) and lets you free the port or change it. If it was a leftover Session
 from a prior run, SSM Dojo waits briefly for it to release on its own.
 
 ::: warning Windows note
-Rich conflict details are available on macOS and Linux. On Windows the conflict detail is more
+macOS and Linux show more conflict detail. On Windows the conflict detail is more
 limited. Pick a different local port if a start fails on a busy port.
 :::
 

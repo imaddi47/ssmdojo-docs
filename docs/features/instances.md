@@ -28,7 +28,7 @@ Use the filter box to narrow the list. It matches on the instance ID or Name tag
 From an instance you can:
 
 - **Create a tunnel**: opens the tunnel form with the target pre-filled. See [Tunnels](/features/tunnels).
-- **Create an SSH connection**: set up a direct SSH connection. See [SSH & Terminal](/features/ssh-and-terminal).
+- **Create an SSH connection**: opens a form to set up a direct connection, with the instance's address pre-filled. See [SSH & Terminal](/features/ssh-and-terminal).
 
 Badges on each instance show whether it already has SSH or tunnel connections defined, so you can
 tell at a glance what's already wired up.

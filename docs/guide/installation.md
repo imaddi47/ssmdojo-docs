@@ -84,7 +84,7 @@ winget install --id 9PGKTS2R9K95 --source msstore
 
 Prefer not to use the Store? Download the standalone installer (`SSM-Dojo-<version>-x64.exe`) from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases). It auto-updates in the background like the
-macOS app. This build is **unsigned**, so Windows SmartScreen warns on first launch — click **More info → Run anyway**. For a signed, hands-off install, use the Microsoft Store above.
+macOS app. This build is **unsigned**, so Windows SmartScreen warns on first launch. Click **More info → Run anyway**. For a signed, hands-off install, use the Microsoft Store above.
 
 ## Automatic updates
 
