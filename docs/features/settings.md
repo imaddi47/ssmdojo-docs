@@ -19,13 +19,13 @@ your native file dialog, so you can pick a folder instead of typing or pasting a
 
 ## Theming
 
-SSM Dojo ships light and dark themes built on CSS-variable design tokens, with its signature teal
-accent. Choosing **system** matches your OS appearance automatically and switches live when your OS
+SSM Dojo ships light and dark themes built on CSS-variable design tokens, with a teal accent color.
+Choosing **system** matches your OS appearance automatically and switches live when your OS
 toggles between light and dark.
 
-## Defaults that save clicks
+## Defaults
 
-Setting a **default profile** and **default region** means SSM Dojo opens ready to work. No need
-to re-pick them in the top bar each launch. This is the quickest win after installing.
+Setting a **default profile** and **default region** pre-selects them in the top bar on launch, so
+you do not need to re-pick them each time. Set them right after installing.
 
 Where settings are stored is covered in [Your data & settings](/reference/configuration).

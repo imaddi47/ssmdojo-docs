@@ -1,12 +1,11 @@
 # Security & privacy
 
-SSM Dojo is built to keep your access local and your secrets safe. This page explains what that
-means for you.
+SSM Dojo is built to keep your access local and your secrets safe.
 
 ## Everything runs locally
 
 SSM Dojo runs entirely on your computer. It isn't a hosted service and it doesn't phone home. The
-only network calls it makes are to **AWS**, using **your** credentials, to do the things you ask
+only network calls it makes are to AWS, using your credentials, to do the things you ask
 (list instances, start sessions, transfer files). Your credentials, connections, and files are
 never sent to any third party.
 
@@ -14,7 +13,7 @@ never sent to any third party.
 
 The app's internal engine listens only on your own machine (loopback). It isn't reachable from
 your network or the internet. On top of that, the desktop app authorizes itself to that engine
-with a **fresh secret generated every time you launch**, so nothing else on your machine can drive
+with a fresh secret generated every time you launch, so nothing else on your machine can drive
 it.
 
 ## Your AWS credentials

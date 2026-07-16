@@ -20,11 +20,9 @@ types. You can navigate into directories and act on individual files.
 Transfers run over SSH (using `rsync` when available, otherwise `scp`). Remote hosts are pinned on
 first use (trust-on-first-use), so transfers stay secure without interactive prompts.
 
-- **Upload** local files and folders to the remote.
-- **Download** remote files and folders to your machine.
-- **Drag-and-drop** works in the browser.
-- **Progress** is shown live for each transfer.
-- **Cancel** an in-flight transfer at any time.
+You can upload local files and folders to the remote, download remote files and folders to your
+machine, and drag and drop files directly in the browser. Progress displays live for each transfer,
+and you can cancel a transfer while it is in flight.
 
 ### Overwrite checks
 

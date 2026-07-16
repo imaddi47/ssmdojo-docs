@@ -43,7 +43,7 @@ for more detail.
 
 ## Saved revisions (Pro)
 
-Pro keeps a local history of the **five most recent prior values** for each profile, region, and
+Pro keeps a local history of the five most recent prior values for each profile, region, and
 parameter-name combination. After a successful update made in SSM Dojo, it saves the value that was
 in AWS immediately before that update. New parameters have no prior revision yet.
 
@@ -69,7 +69,7 @@ Choose a display mode to suit the review:
 
 Equal selections simply show that there are no content changes.
 
-Each selected value has a **Copy** button — copy a previous revision (or the current cloud value)
+Each selected value has a **Copy** button: copy a previous revision (or the current cloud value)
 and paste it back into the editor to restore it.
 
 ## IAM permissions
