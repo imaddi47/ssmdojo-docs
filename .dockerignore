@@ -1,0 +1,22 @@
+# Dependencies and build artifacts (rebuilt inside the image)
+node_modules
+**/node_modules
+docs/.vitepress/dist
+docs/.vitepress/cache
+
+# CI (keep .git: VitePress `lastUpdated` reads git history at build time)
+.gitignore
+.github
+
+# Agent/editor tooling
+.claude
+.codex
+.vscode
+.idea
+
+# Docker / local files
+Dockerfile
+docker-compose.yml
+.dockerignore
+.env
+.env.*
