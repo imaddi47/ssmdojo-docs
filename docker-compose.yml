@@ -1,0 +1,21 @@
+# Docker Compose for deploying the SSM Dojo docs on Dokploy.
+#
+# Dokploy runs its own Traefik reverse proxy and provides an external network
+# named `dokploy-network`. This service joins that network and exposes port 80
+# internally; Traefik terminates TLS and routes the domain to it.
+#
+# Set the DOMAIN environment variable in Dokploy (Compose > Environment), e.g.
+#   DOMAIN=docs.ssmdojo.com
+#
+# Alternatively, delete the `labels:` block and configure the domain through the
+# Dokploy UI (Compose > Domains) — Dokploy will inject the Traefik labels for you.
+
+services:
+  docs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8888:80"
+
