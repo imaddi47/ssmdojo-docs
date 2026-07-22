@@ -1,0 +1,48 @@
+name: update production
+
+# Manually promote `main` to the `production` branch by rebasing production onto
+# main and pushing it. The GitHub Pages deploy (deploy-docs.yml) runs on push to
+# `production`, but pushes made with the default GITHUB_TOKEN do NOT trigger
+# other GitHub Actions workflows, so this workflow dispatches the deploy
+# explicitly after the push. (If docs ever moves to an external deploy that
+# watches the production branch, the final "Trigger" step can be removed.)
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-production
+  cancel-in-progress: false
+
+jobs:
+  update-production:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout (full history)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Rebase production onto main and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin
+          if git show-ref --verify --quiet refs/remotes/origin/production; then
+            echo "Rebasing existing production branch onto main"
+            git checkout -B production origin/production
+            git rebase origin/main
+            git push --force-with-lease origin production
+          else
+            echo "production branch does not exist yet; creating it from main"
+            git checkout -B production origin/main
+            git push origin production
+          fi
+
+      - name: Trigger the production Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy-docs.yml --ref production
