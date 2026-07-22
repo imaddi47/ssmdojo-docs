@@ -4,6 +4,17 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.6, 2026-07-23
+
+- **Long commands no longer scramble the terminal line.** When a command ran past the width of the
+  terminal, or you searched your history with Ctrl+R, the text could write over the prompt and look
+  jumbled. The terminal now tracks its real size and wraps correctly, so long lines and history
+  search stay readable at any window size.
+- **It's clearer what to do when a session drops.** When an SSH session disconnects, the terminal
+  shows a panel over the screen with a Reconnect button, instead of a small status label that was
+  easy to miss. If the connection failed, the panel shows why.
+- **You can resize the terminal.** Drag the bottom edge to make it taller or shorter.
+
 ## v0.3.4, 2026-07-16
 
 - **New AWS credentials are picked up without a restart.** Sign into a profile after SSM Dojo is
