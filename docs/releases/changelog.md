@@ -4,6 +4,14 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.3.7, 2026-07-23
+
+- **Terminal text no longer overlaps on some hosts at the default window size.** A follow-up to
+  the previous wrap fix: on certain hosts (Amazon Linux 2, for example) the terminal still
+  started at the wrong size and could write over the prompt until you resized the window. It now
+  picks up its real size the moment the session connects, so long lines wrap cleanly from the
+  first prompt with no resizing needed.
+
 ## v0.3.6, 2026-07-23
 
 - **Long commands no longer scramble the terminal line.** When a command ran past the width of the
