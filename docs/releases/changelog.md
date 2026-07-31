@@ -4,6 +4,27 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.4.0, 2026-07-31
+
+- New **Secrets** section: browse and search AWS Secrets Manager for your selected profile and
+  region, open a secret to see its value, tags and rotation status, and create, edit, or delete
+  secrets. It sits alongside Parameters and uses the same profile and region picker, so managing a
+  database password no longer means a trip to the AWS console.
+- **JSON secrets can be edited field by field.** Most secrets are a JSON object of credentials, so
+  the editor shows them as a key/value table — change one field without hand-editing braces and
+  quotes. Secrets that are not a flat JSON object are edited as raw text, and binary secrets are
+  shown read-only.
+- **Secret values stay hidden until you reveal them.** Opening a secret shows its details with the
+  value masked, so you can check what a secret is and when it last changed without putting the
+  value on screen.
+- **Deleting a secret spells out the recovery window.** AWS keeps a deleted secret recoverable for
+  7 to 30 days; the delete dialog shows the exact date it will be destroyed and defaults to the
+  full 30 days. Deleting immediately with no recovery is a separate, deliberate choice. A secret
+  that is already scheduled for deletion shows its date and can be restored.
+- **You choose how many local backups to keep** (Pro). Saved revisions let you diff and roll back a
+  parameter or a secret, and that history was fixed at the last five versions. Settings now has a
+  separate limit for parameters and for secrets, anywhere from 1 to 100 each.
+
 ## v0.3.7, 2026-07-23
 
 - **Terminal text no longer overlaps on some hosts at the default window size.** A follow-up to
