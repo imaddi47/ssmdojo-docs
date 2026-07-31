@@ -42,7 +42,17 @@ jobs:
             git push origin production
           fi
 
+      # Uses github-script rather than `gh workflow run`: the self-hosted runners have
+      # no GitHub CLI (it is preinstalled only on GitHub-hosted images, which is why
+      # this step failed with "gh: command not found" after the runner move). This
+      # needs nothing but the runner's own bundled Node and the automatic token.
       - name: Trigger the production Pages deploy
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: gh workflow run deploy-docs.yml --ref production
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.actions.createWorkflowDispatch({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              workflow_id: 'deploy-docs.yml',
+              ref: 'production',
+            });
