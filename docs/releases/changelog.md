@@ -4,6 +4,14 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.4.2, 2026-10-15
+
+- **The parameter and secret lists can be widened.** Long hierarchical names such as
+  `/toddle/access/eu-central-1/ecs-…` were always cut off because the list column had a fixed
+  width. Hover the gap between the list and the editor on the Parameters or Secrets screen and
+  drag it to resize the list; the arrow keys work too, and a double-click puts it back. Each
+  screen remembers its width.
+
 ## v0.4.1, 2026-10-14
 
 - **Editing a Standard-tier parameter works again.** Saving a change to a Standard-tier parameter
