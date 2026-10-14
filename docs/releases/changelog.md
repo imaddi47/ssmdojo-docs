@@ -4,6 +4,23 @@ Release history for SSM Dojo, newest first. Versioning follows
 [Semantic Versioning](https://semver.org/). Download any release from the
 [releases page](https://github.com/imaddi47/ssmdojo-docs/releases).
 
+## v0.4.2, 2026-10-15
+
+- **The parameter and secret lists can be widened.** Long hierarchical names such as
+  `/toddle/access/eu-central-1/ecs-…` were always cut off because the list column had a fixed
+  width. Hover the gap between the list and the editor on the Parameters or Secrets screen and
+  drag it to resize the list; the arrow keys work too, and a double-click puts it back. Each
+  screen remembers its width.
+
+## v0.4.1, 2026-10-14
+
+- **Editing a Standard-tier parameter works again.** Saving a change to a Standard-tier parameter
+  failed with "AWS rejected this parameter configuration", even though the same edit went through
+  in the AWS console. The app was sending an empty policy setting that AWS only accepts on
+  Advanced-tier parameters; it now leaves that out unless the parameter is Advanced. The same
+  change stops an edit made under Intelligent-Tiering from silently moving the parameter to the
+  Advanced tier.
+
 ## v0.4.0, 2026-07-31
 
 - New **Secrets** section: browse and search AWS Secrets Manager for your selected profile and
